@@ -1,0 +1,406 @@
+Ano;Regiao;Nome_UF;Indicador;Valor
+2019;Norte;RO;Mortalidade Infantil (por 1000 NV);14.0
+2020;Norte;RO;Mortalidade Infantil (por 1000 NV);13.5
+2021;Norte;RO;Mortalidade Infantil (por 1000 NV);13.8
+2019;Norte;AC;Mortalidade Infantil (por 1000 NV);15.0
+2020;Norte;AC;Mortalidade Infantil (por 1000 NV);14.5
+2021;Norte;AC;Mortalidade Infantil (por 1000 NV);14.7
+2019;Norte;AM;Mortalidade Infantil (por 1000 NV);17.5
+2020;Norte;AM;Mortalidade Infantil (por 1000 NV);17.0
+2021;Norte;AM;Mortalidade Infantil (por 1000 NV);17.2
+2019;Norte;RR;Mortalidade Infantil (por 1000 NV);16.0
+2020;Norte;RR;Mortalidade Infantil (por 1000 NV);15.5
+2021;Norte;RR;Mortalidade Infantil (por 1000 NV);15.8
+2019;Norte;PA;Mortalidade Infantil (por 1000 NV);18.5
+2020;Norte;PA;Mortalidade Infantil (por 1000 NV);18.0
+2021;Norte;PA;Mortalidade Infantil (por 1000 NV);18.3
+2019;Norte;AP;Mortalidade Infantil (por 1000 NV);17.0
+2020;Norte;AP;Mortalidade Infantil (por 1000 NV);16.5
+2021;Norte;AP;Mortalidade Infantil (por 1000 NV);16.8
+2019;Norte;TO;Mortalidade Infantil (por 1000 NV);13.0
+2020;Norte;TO;Mortalidade Infantil (por 1000 NV);12.5
+2021;Norte;TO;Mortalidade Infantil (por 1000 NV);12.8
+2019;Nordeste;MA;Mortalidade Infantil (por 1000 NV);19.0
+2020;Nordeste;MA;Mortalidade Infantil (por 1000 NV);18.5
+2021;Nordeste;MA;Mortalidade Infantil (por 1000 NV);18.8
+2019;Nordeste;PI;Mortalidade Infantil (por 1000 NV);17.0
+2020;Nordeste;PI;Mortalidade Infantil (por 1000 NV);16.5
+2021;Nordeste;PI;Mortalidade Infantil (por 1000 NV);16.8
+2019;Nordeste;CE;Mortalidade Infantil (por 1000 NV);15.5
+2020;Nordeste;CE;Mortalidade Infantil (por 1000 NV);15.0
+2021;Nordeste;CE;Mortalidade Infantil (por 1000 NV);15.3
+2019;Nordeste;RN;Mortalidade Infantil (por 1000 NV);14.0
+2020;Nordeste;RN;Mortalidade Infantil (por 1000 NV);13.5
+2021;Nordeste;RN;Mortalidade Infantil (por 1000 NV);13.8
+2019;Nordeste;PB;Mortalidade Infantil (por 1000 NV);15.0
+2020;Nordeste;PB;Mortalidade Infantil (por 1000 NV);14.5
+2021;Nordeste;PB;Mortalidade Infantil (por 1000 NV);14.8
+2019;Nordeste;PE;Mortalidade Infantil (por 1000 NV);16.5
+2020;Nordeste;PE;Mortalidade Infantil (por 1000 NV);16.0
+2021;Nordeste;PE;Mortalidade Infantil (por 1000 NV);16.3
+2019;Nordeste;AL;Mortalidade Infantil (por 1000 NV);18.0
+2020;Nordeste;AL;Mortalidade Infantil (por 1000 NV);17.5
+2021;Nordeste;AL;Mortalidade Infantil (por 1000 NV);17.8
+2019;Nordeste;SE;Mortalidade Infantil (por 1000 NV);15.5
+2020;Nordeste;SE;Mortalidade Infantil (por 1000 NV);15.0
+2021;Nordeste;SE;Mortalidade Infantil (por 1000 NV);15.3
+2019;Nordeste;BA;Mortalidade Infantil (por 1000 NV);15.5
+2020;Nordeste;BA;Mortalidade Infantil (por 1000 NV);15.1
+2021;Nordeste;BA;Mortalidade Infantil (por 1000 NV);14.8
+2019;Sudeste;MG;Mortalidade Infantil (por 1000 NV);10.0
+2020;Sudeste;MG;Mortalidade Infantil (por 1000 NV);9.8
+2021;Sudeste;MG;Mortalidade Infantil (por 1000 NV);9.5
+2019;Sudeste;ES;Mortalidade Infantil (por 1000 NV);10.5
+2020;Sudeste;ES;Mortalidade Infantil (por 1000 NV);10.3
+2021;Sudeste;ES;Mortalidade Infantil (por 1000 NV);10.1
+2019;Sudeste;RJ;Mortalidade Infantil (por 1000 NV);12.8
+2020;Sudeste;RJ;Mortalidade Infantil (por 1000 NV);12.5
+2021;Sudeste;RJ;Mortalidade Infantil (por 1000 NV);12.1
+2019;Sudeste;SP;Mortalidade Infantil (por 1000 NV);11.5
+2020;Sudeste;SP;Mortalidade Infantil (por 1000 NV);10.9
+2021;Sudeste;SP;Mortalidade Infantil (por 1000 NV);11.2
+2019;Sul;PR;Mortalidade Infantil (por 1000 NV);9.5
+2020;Sul;PR;Mortalidade Infantil (por 1000 NV);9.3
+2021;Sul;PR;Mortalidade Infantil (por 1000 NV);9.1
+2019;Sul;SC;Mortalidade Infantil (por 1000 NV);8.5
+2020;Sul;SC;Mortalidade Infantil (por 1000 NV);8.3
+2021;Sul;SC;Mortalidade Infantil (por 1000 NV);8.1
+2019;Sul;RS;Mortalidade Infantil (por 1000 NV);9.0
+2020;Sul;RS;Mortalidade Infantil (por 1000 NV);8.8
+2021;Sul;RS;Mortalidade Infantil (por 1000 NV);8.6
+2019;Centro-Oeste;MS;Mortalidade Infantil (por 1000 NV);11.0
+2020;Centro-Oeste;MS;Mortalidade Infantil (por 1000 NV);10.8
+2021;Centro-Oeste;MS;Mortalidade Infantil (por 1000 NV);10.5
+2019;Centro-Oeste;MT;Mortalidade Infantil (por 1000 NV);12.0
+2020;Centro-Oeste;MT;Mortalidade Infantil (por 1000 NV);11.8
+2021;Centro-Oeste;MT;Mortalidade Infantil (por 1000 NV);11.5
+2019;Centro-Oeste;GO;Mortalidade Infantil (por 1000 NV);10.5
+2020;Centro-Oeste;GO;Mortalidade Infantil (por 1000 NV);10.3
+2021;Centro-Oeste;GO;Mortalidade Infantil (por 1000 NV);10.1
+2019;Centro-Oeste;DF;Mortalidade Infantil (por 1000 NV);9.0
+2020;Centro-Oeste;DF;Mortalidade Infantil (por 1000 NV);8.8
+2021;Centro-Oeste;DF;Mortalidade Infantil (por 1000 NV);8.6
+2019;Norte;RO;Casos de Tuberculose (por 100 mil hab);35.0
+2020;Norte;RO;Casos de Tuberculose (por 100 mil hab);34.0
+2021;Norte;RO;Casos de Tuberculose (por 100 mil hab);34.5
+2019;Norte;AC;Casos de Tuberculose (por 100 mil hab);42.0
+2020;Norte;AC;Casos de Tuberculose (por 100 mil hab);41.0
+2021;Norte;AC;Casos de Tuberculose (por 100 mil hab);41.5
+2019;Norte;AM;Casos de Tuberculose (por 100 mil hab);75.0
+2020;Norte;AM;Casos de Tuberculose (por 100 mil hab);73.0
+2021;Norte;AM;Casos de Tuberculose (por 100 mil hab);74.0
+2019;Norte;RR;Casos de Tuberculose (por 100 mil hab);60.0
+2020;Norte;RR;Casos de Tuberculose (por 100 mil hab);58.0
+2021;Norte;RR;Casos de Tuberculose (por 100 mil hab);59.0
+2019;Norte;PA;Casos de Tuberculose (por 100 mil hab);45.0
+2020;Norte;PA;Casos de Tuberculose (por 100 mil hab);43.0
+2021;Norte;PA;Casos de Tuberculose (por 100 mil hab);44.0
+2019;Norte;AP;Casos de Tuberculose (por 100 mil hab);55.0
+2020;Norte;AP;Casos de Tuberculose (por 100 mil hab);53.0
+2021;Norte;AP;Casos de Tuberculose (por 100 mil hab);54.0
+2019;Norte;TO;Casos de Tuberculose (por 100 mil hab);20.0
+2020;Norte;TO;Casos de Tuberculose (por 100 mil hab);19.0
+2021;Norte;TO;Casos de Tuberculose (por 100 mil hab);19.5
+2019;Nordeste;MA;Casos de Tuberculose (por 100 mil hab);30.0
+2020;Nordeste;MA;Casos de Tuberculose (por 100 mil hab);29.0
+2021;Nordeste;MA;Casos de Tuberculose (por 100 mil hab);29.5
+2019;Nordeste;PI;Casos de Tuberculose (por 100 mil hab);25.0
+2020;Nordeste;PI;Casos de Tuberculose (por 100 mil hab);24.0
+2021;Nordeste;PI;Casos de Tuberculose (por 100 mil hab);24.5
+2019;Nordeste;CE;Casos de Tuberculose (por 100 mil hab);38.0
+2020;Nordeste;CE;Casos de Tuberculose (por 100 mil hab);37.0
+2021;Nordeste;CE;Casos de Tuberculose (por 100 mil hab);37.5
+2019;Nordeste;RN;Casos de Tuberculose (por 100 mil hab);35.0
+2020;Nordeste;RN;Casos de Tuberculose (por 100 mil hab);34.0
+2021;Nordeste;RN;Casos de Tuberculose (por 100 mil hab);34.5
+2019;Nordeste;PB;Casos de Tuberculose (por 100 mil hab);28.0
+2020;Nordeste;PB;Casos de Tuberculose (por 100 mil hab);27.0
+2021;Nordeste;PB;Casos de Tuberculose (por 100 mil hab);27.5
+2019;Nordeste;PE;Casos de Tuberculose (por 100 mil hab);45.0
+2020;Nordeste;PE;Casos de Tuberculose (por 100 mil hab);43.0
+2021;Nordeste;PE;Casos de Tuberculose (por 100 mil hab);44.0
+2019;Nordeste;AL;Casos de Tuberculose (por 100 mil hab);40.0
+2020;Nordeste;AL;Casos de Tuberculose (por 100 mil hab);38.0
+2021;Nordeste;AL;Casos de Tuberculose (por 100 mil hab);39.0
+2019;Nordeste;SE;Casos de Tuberculose (por 100 mil hab);30.0
+2020;Nordeste;SE;Casos de Tuberculose (por 100 mil hab);29.0
+2021;Nordeste;SE;Casos de Tuberculose (por 100 mil hab);29.5
+2019;Nordeste;BA;Casos de Tuberculose (por 100 mil hab);25.5
+2020;Nordeste;BA;Casos de Tuberculose (por 100 mil hab);24.9
+2021;Nordeste;BA;Casos de Tuberculose (por 100 mil hab);25.2
+2019;Sudeste;MG;Casos de Tuberculose (por 100 mil hab);15.0
+2020;Sudeste;MG;Casos de Tuberculose (por 100 mil hab);14.5
+2021;Sudeste;MG;Casos de Tuberculose (por 100 mil hab);14.3
+2019;Sudeste;ES;Casos de Tuberculose (por 100 mil hab);18.0
+2020;Sudeste;ES;Casos de Tuberculose (por 100 mil hab);17.5
+2021;Sudeste;ES;Casos de Tuberculose (por 100 mil hab);17.8
+2019;Sudeste;RJ;Casos de Tuberculose (por 100 mil hab);70.1
+2020;Sudeste;RJ;Casos de Tuberculose (por 100 mil hab);68.5
+2021;Sudeste;RJ;Casos de Tuberculose (por 100 mil hab);69.0
+2019;Sudeste;SP;Casos de Tuberculose (por 100 mil hab);32.4
+2020;Sudeste;SP;Casos de Tuberculose (por 100 mil hab);31.0
+2021;Sudeste;SP;Casos de Tuberculose (por 100 mil hab);32.1
+2019;Sul;PR;Casos de Tuberculose (por 100 mil hab);20.0
+2020;Sul;PR;Casos de Tuberculose (por 100 mil hab);19.0
+2021;Sul;PR;Casos de Tuberculose (por 100 mil hab);19.5
+2019;Sul;SC;Casos de Tuberculose (por 100 mil hab);18.0
+2020;Sul;SC;Casos de Tuberculose (por 100 mil hab);17.0
+2021;Sul;SC;Casos de Tuberculose (por 100 mil hab);17.5
+2019;Sul;RS;Casos de Tuberculose (por 100 mil hab);35.0
+2020;Sul;RS;Casos de Tuberculose (por 100 mil hab);33.0
+2021;Sul;RS;Casos de Tuberculose (por 100 mil hab);34.0
+2019;Centro-Oeste;MS;Casos de Tuberculose (por 100 mil hab);22.0
+2020;Centro-Oeste;MS;Casos de Tuberculose (por 100 mil hab);21.0
+2021;Centro-Oeste;MS;Casos de Tuberculose (por 100 mil hab);21.5
+2019;Centro-Oeste;MT;Casos de Tuberculose (por 100 mil hab);28.0
+2020;Centro-Oeste;MT;Casos de Tuberculose (por 100 mil hab);27.0
+2021;Centro-Oeste;MT;Casos de Tuberculose (por 100 mil hab);27.5
+2019;Centro-Oeste;GO;Casos de Tuberculose (por 100 mil hab);19.0
+2020;Centro-Oeste;GO;Casos de Tuberculose (por 100 mil hab);18.0
+2021;Centro-Oeste;GO;Casos de Tuberculose (por 100 mil hab);18.5
+2019;Centro-Oeste;DF;Casos de Tuberculose (por 100 mil hab);25.0
+2020;Centro-Oeste;DF;Casos de Tuberculose (por 100 mil hab);24.0
+2021;Centro-Oeste;DF;Casos de Tuberculose (por 100 mil hab);24.5
+2019;Norte;RO;Razão de Mortalidade Materna (por 100 mil NV);75.0
+2020;Norte;RO;Razão de Mortalidade Materna (por 100 mil NV);85.0
+2021;Norte;RO;Razão de Mortalidade Materna (por 100 mil NV);95.0
+2019;Norte;AC;Razão de Mortalidade Materna (por 100 mil NV);80.0
+2020;Norte;AC;Razão de Mortalidade Materna (por 100 mil NV);90.0
+2021;Norte;AC;Razão de Mortalidade Materna (por 100 mil NV);100.0
+2019;Norte;AM;Razão de Mortalidade Materna (por 100 mil NV);95.0
+2020;Norte;AM;Razão de Mortalidade Materna (por 100 mil NV);105.0
+2021;Norte;AM;Razão de Mortalidade Materna (por 100 mil NV);115.0
+2019;Norte;RR;Razão de Mortalidade Materna (por 100 mil NV);85.0
+2020;Norte;RR;Razão de Mortalidade Materna (por 100 mil NV);95.0
+2021;Norte;RR;Razão de Mortalidade Materna (por 100 mil NV);105.0
+2019;Norte;PA;Razão de Mortalidade Materna (por 100 mil NV);90.0
+2020;Norte;PA;Razão de Mortalidade Materna (por 100 mil NV);100.0
+2021;Norte;PA;Razão de Mortalidade Materna (por 100 mil NV);110.0
+2019;Norte;AP;Razão de Mortalidade Materna (por 100 mil NV);80.0
+2020;Norte;AP;Razão de Mortalidade Materna (por 100 mil NV);90.0
+2021;Norte;AP;Razão de Mortalidade Materna (por 100 mil NV);100.0
+2019;Norte;TO;Razão de Mortalidade Materna (por 100 mil NV);70.0
+2020;Norte;TO;Razão de Mortalidade Materna (por 100 mil NV);80.0
+2021;Norte;TO;Razão de Mortalidade Materna (por 100 mil NV);90.0
+2019;Nordeste;MA;Razão de Mortalidade Materna (por 100 mil NV);85.0
+2020;Nordeste;MA;Razão de Mortalidade Materna (por 100 mil NV);95.0
+2021;Nordeste;MA;Razão de Mortalidade Materna (por 100 mil NV);105.0
+2019;Nordeste;PI;Razão de Mortalidade Materna (por 100 mil NV);75.0
+2020;Nordeste;PI;Razão de Mortalidade Materna (por 100 mil NV);85.0
+2021;Nordeste;PI;Razão de Mortalidade Materna (por 100 mil NV);95.0
+2019;Nordeste;CE;Razão de Mortalidade Materna (por 100 mil NV);70.0
+2020;Nordeste;CE;Razão de Mortalidade Materna (por 100 mil NV);80.0
+2021;Nordeste;CE;Razão de Mortalidade Materna (por 100 mil NV);90.0
+2019;Nordeste;RN;Razão de Mortalidade Materna (por 100 mil NV);65.0
+2020;Nordeste;RN;Razão de Mortalidade Materna (por 100 mil NV);75.0
+2021;Nordeste;RN;Razão de Mortalidade Materna (por 100 mil NV);85.0
+2019;Nordeste;PB;Razão de Mortalidade Materna (por 100 mil NV);70.0
+2020;Nordeste;PB;Razão de Mortalidade Materna (por 100 mil NV);80.0
+2021;Nordeste;PB;Razão de Mortalidade Materna (por 100 mil NV);90.0
+2019;Nordeste;PE;Razão de Mortalidade Materna (por 100 mil NV);80.0
+2020;Nordeste;PE;Razão de Mortalidade Materna (por 100 mil NV);90.0
+2021;Nordeste;PE;Razão de Mortalidade Materna (por 100 mil NV);100.0
+2019;Nordeste;AL;Razão de Mortalidade Materna (por 100 mil NV);90.0
+2020;Nordeste;AL;Razão de Mortalidade Materna (por 100 mil NV);100.0
+2021;Nordeste;AL;Razão de Mortalidade Materna (por 100 mil NV);110.0
+2019;Nordeste;SE;Razão de Mortalidade Materna (por 100 mil NV);70.0
+2020;Nordeste;SE;Razão de Mortalidade Materna (por 100 mil NV);80.0
+2021;Nordeste;SE;Razão de Mortalidade Materna (por 100 mil NV);90.0
+2019;Nordeste;BA;Razão de Mortalidade Materna (por 100 mil NV);88.0
+2020;Nordeste;BA;Razão de Mortalidade Materna (por 100 mil NV);95.0
+2021;Nordeste;BA;Razão de Mortalidade Materna (por 100 mil NV);105.0
+2019;Sudeste;MG;Razão de Mortalidade Materna (por 100 mil NV);55.0
+2020;Sudeste;MG;Razão de Mortalidade Materna (por 100 mil NV);65.0
+2021;Sudeste;MG;Razão de Mortalidade Materna (por 100 mil NV);75.0
+2019;Sudeste;ES;Razão de Mortalidade Materna (por 100 mil NV);50.0
+2020;Sudeste;ES;Razão de Mortalidade Materna (por 100 mil NV);60.0
+2021;Sudeste;ES;Razão de Mortalidade Materna (por 100 mil NV);70.0
+2019;Sudeste;RJ;Razão de Mortalidade Materna (por 100 mil NV);65.5
+2020;Sudeste;RJ;Razão de Mortalidade Materna (por 100 mil NV);75.0
+2021;Sudeste;RJ;Razão de Mortalidade Materna (por 100 mil NV);85.0
+2019;Sudeste;SP;Razão de Mortalidade Materna (por 100 mil NV);58.0
+2020;Sudeste;SP;Razão de Mortalidade Materna (por 100 mil NV);65.0
+2021;Sudeste;SP;Razão de Mortalidade Materna (por 100 mil NV);72.5
+2019;Sul;PR;Razão de Mortalidade Materna (por 100 mil NV);45.0
+2020;Sul;PR;Razão de Mortalidade Materna (por 100 mil NV);55.0
+2021;Sul;PR;Razão de Mortalidade Materna (por 100 mil NV);65.0
+2019;Sul;SC;Razão de Mortalidade Materna (por 100 mil NV);40.0
+2020;Sul;SC;Razão de Mortalidade Materna (por 100 mil NV);50.0
+2021;Sul;SC;Razão de Mortalidade Materna (por 100 mil NV);60.0
+2019;Sul;RS;Razão de Mortalidade Materna (por 100 mil NV);50.0
+2020;Sul;RS;Razão de Mortalidade Materna (por 100 mil NV);60.0
+2021;Sul;RS;Razão de Mortalidade Materna (por 100 mil NV);70.0
+2019;Centro-Oeste;MS;Razão de Mortalidade Materna (por 100 mil NV);60.0
+2020;Centro-Oeste;MS;Razão de Mortalidade Materna (por 100 mil NV);70.0
+2021;Centro-Oeste;MS;Razão de Mortalidade Materna (por 100 mil NV);80.0
+2019;Centro-Oeste;MT;Razão de Mortalidade Materna (por 100 mil NV);65.0
+2020;Centro-Oeste;MT;Razão de Mortalidade Materna (por 100 mil NV);75.0
+2021;Centro-Oeste;MT;Razão de Mortalidade Materna (por 100 mil NV);85.0
+2019;Centro-Oeste;GO;Razão de Mortalidade Materna (por 100 mil NV);55.0
+2020;Centro-Oeste;GO;Razão de Mortalidade Materna (por 100 mil NV);65.0
+2021;Centro-Oeste;GO;Razão de Mortalidade Materna (por 100 mil NV);75.0
+2019;Centro-Oeste;DF;Razão de Mortalidade Materna (por 100 mil NV);50.0
+2020;Centro-Oeste;DF;Razão de Mortalidade Materna (por 100 mil NV);60.0
+2021;Centro-Oeste;DF;Razão de Mortalidade Materna (por 100 mil NV);70.0
+2019;Norte;RO;Taxa de Suicídio (por 100 mil hab);6.5
+2020;Norte;RO;Taxa de Suicídio (por 100 mil hab);6.8
+2021;Norte;RO;Taxa de Suicídio (por 100 mil hab);7.0
+2019;Norte;AC;Taxa de Suicídio (por 100 mil hab);7.2
+2020;Norte;AC;Taxa de Suicídio (por 100 mil hab);7.5
+2021;Norte;AC;Taxa de Suicídio (por 100 mil hab);7.8
+2019;Norte;AM;Taxa de Suicídio (por 100 mil hab);8.0
+2020;Norte;AM;Taxa de Suicídio (por 100 mil hab);8.3
+2021;Norte;AM;Taxa de Suicídio (por 100 mil hab);8.5
+2019;Norte;RR;Taxa de Suicídio (por 100 mil hab);9.0
+2020;Norte;RR;Taxa de Suicídio (por 100 mil hab);9.3
+2021;Norte;RR;Taxa de Suicídio (por 100 mil hab);9.5
+2019;Norte;PA;Taxa de Suicídio (por 100 mil hab);6.0
+2020;Norte;PA;Taxa de Suicídio (por 100 mil hab);6.2
+2021;Norte;PA;Taxa de Suicídio (por 100 mil hab);6.5
+2019;Norte;AP;Taxa de Suicídio (por 100 mil hab);7.5
+2020;Norte;AP;Taxa de Suicídio (por 100 mil hab);7.8
+2021;Norte;AP;Taxa de Suicídio (por 100 mil hab);8.0
+2019;Norte;TO;Taxa de Suicídio (por 100 mil hab);5.8
+2020;Norte;TO;Taxa de Suicídio (por 100 mil hab);6.0
+2021;Norte;TO;Taxa de Suicídio (por 100 mil hab);6.3
+2019;Nordeste;MA;Taxa de Suicídio (por 100 mil hab);4.0
+2020;Nordeste;MA;Taxa de Suicídio (por 100 mil hab);4.2
+2021;Nordeste;MA;Taxa de Suicídio (por 100 mil hab);4.5
+2019;Nordeste;PI;Taxa de Suicídio (por 100 mil hab);5.5
+2020;Nordeste;PI;Taxa de Suicídio (por 100 mil hab);5.8
+2021;Nordeste;PI;Taxa de Suicídio (por 100 mil hab);6.0
+2019;Nordeste;CE;Taxa de Suicídio (por 100 mil hab);6.0
+2020;Nordeste;CE;Taxa de Suicídio (por 100 mil hab);6.3
+2021;Nordeste;CE;Taxa de Suicídio (por 100 mil hab);6.5
+2019;Nordeste;RN;Taxa de Suicídio (por 100 mil hab);5.0
+2020;Nordeste;RN;Taxa de Suicídio (por 100 mil hab);5.3
+2021;Nordeste;RN;Taxa de Suicídio (por 100 mil hab);5.5
+2019;Nordeste;PB;Taxa de Suicídio (por 100 mil hab);4.5
+2020;Nordeste;PB;Taxa de Suicídio (por 100 mil hab);4.8
+2021;Nordeste;PB;Taxa de Suicídio (por 100 mil hab);5.0
+2019;Nordeste;PE;Taxa de Suicídio (por 100 mil hab);5.2
+2020;Nordeste;PE;Taxa de Suicídio (por 100 mil hab);5.5
+2021;Nordeste;PE;Taxa de Suicídio (por 100 mil hab);5.7
+2019;Nordeste;AL;Taxa de Suicídio (por 100 mil hab);4.8
+2020;Nordeste;AL;Taxa de Suicídio (por 100 mil hab);5.1
+2021;Nordeste;AL;Taxa de Suicídio (por 100 mil hab);5.3
+2019;Nordeste;SE;Taxa de Suicídio (por 100 mil hab);5.0
+2020;Nordeste;SE;Taxa de Suicídio (por 100 mil hab);5.3
+2021;Nordeste;SE;Taxa de Suicídio (por 100 mil hab);5.5
+2019;Nordeste;BA;Taxa de Suicídio (por 100 mil hab);5.0
+2020;Nordeste;BA;Taxa de Suicídio (por 100 mil hab);5.2
+2021;Nordeste;BA;Taxa de Suicídio (por 100 mil hab);5.4
+2019;Sudeste;MG;Taxa de Suicídio (por 100 mil hab);8.0
+2020;Sudeste;MG;Taxa de Suicídio (por 100 mil hab);8.2
+2021;Sudeste;MG;Taxa de Suicídio (por 100 mil hab);8.5
+2019;Sudeste;ES;Taxa de Suicídio (por 100 mil hab);7.5
+2020;Sudeste;ES;Taxa de Suicídio (por 100 mil hab);7.8
+2021;Sudeste;ES;Taxa de Suicídio (por 100 mil hab);8.0
+2019;Sudeste;RJ;Taxa de Suicídio (por 100 mil hab);6.8
+2020;Sudeste;RJ;Taxa de Suicídio (por 100 mil hab);7.0
+2021;Sudeste;RJ;Taxa de Suicídio (por 100 mil hab);7.3
+2019;Sudeste;SP;Taxa de Suicídio (por 100 mil hab);6.5
+2020;Sudeste;SP;Taxa de Suicídio (por 100 mil hab);6.7
+2021;Sudeste;SP;Taxa de Suicídio (por 100 mil hab);7.0
+2019;Sul;PR;Taxa de Suicídio (por 100 mil hab);10.5
+2020;Sul;PR;Taxa de Suicídio (por 100 mil hab);10.8
+2021;Sul;PR;Taxa de Suicídio (por 100 mil hab);11.0
+2019;Sul;SC;Taxa de Suicídio (por 100 mil hab);12.0
+2020;Sul;SC;Taxa de Suicídio (por 100 mil hab);12.3
+2021;Sul;SC;Taxa de Suicídio (por 100 mil hab);12.5
+2019;Sul;RS;Taxa de Suicídio (por 100 mil hab);11.5
+2020;Sul;RS;Taxa de Suicídio (por 100 mil hab);11.8
+2021;Sul;RS;Taxa de Suicídio (por 100 mil hab);12.0
+2019;Centro-Oeste;MS;Taxa de Suicídio (por 100 mil hab);9.0
+2020;Centro-Oeste;MS;Taxa de Suicídio (por 100 mil hab);9.2
+2021;Centro-Oeste;MS;Taxa de Suicídio (por 100 mil hab);9.5
+2019;Centro-Oeste;MT;Taxa de Suicídio (por 100 mil hab);8.5
+2020;Centro-Oeste;MT;Taxa de Suicídio (por 100 mil hab);8.7
+2021;Centro-Oeste;MT;Taxa de Suicídio (por 100 mil hab);9.0
+2019;Centro-Oeste;GO;Taxa de Suicídio (por 100 mil hab);7.8
+2020;Centro-Oeste;GO;Taxa de Suicídio (por 100 mil hab);8.0
+2021;Centro-Oeste;GO;Taxa de Suicídio (por 100 mil hab);8.3
+2019;Centro-Oeste;DF;Taxa de Suicídio (por 100 mil hab);7.0
+2020;Centro-Oeste;DF;Taxa de Suicídio (por 100 mil hab);7.2
+2021;Centro-Oeste;DF;Taxa de Suicídio (por 100 mil hab);7.5
+2019;Norte;RO;Cobertura de Pré-Natal (em %);75.0
+2020;Norte;RO;Cobertura de Pré-Natal (em %);76.5
+2021;Norte;RO;Cobertura de Pré-Natal (em %);78.0
+2019;Norte;AC;Cobertura de Pré-Natal (em %);72.0
+2020;Norte;AC;Cobertura de Pré-Natal (em %);73.5
+2021;Norte;AC;Cobertura de Pré-Natal (em %);75.0
+2019;Norte;AM;Cobertura de Pré-Natal (em %);68.0
+2020;Norte;AM;Cobertura de Pré-Natal (em %);69.5
+2021;Norte;AM;Cobertura de Pré-Natal (em %);71.0
+2019;Norte;RR;Cobertura de Pré-Natal (em %);70.0
+2020;Norte;RR;Cobertura de Pré-Natal (em %);71.5
+2021;Norte;RR;Cobertura de Pré-Natal (em %);73.0
+2019;Norte;PA;Cobertura de Pré-Natal (em %);65.0
+2020;Norte;PA;Cobertura de Pré-Natal (em %);66.5
+2021;Norte;PA;Cobertura de Pré-Natal (em %);68.0
+2019;Norte;AP;Cobertura de Pré-Natal (em %);60.0
+2020;Norte;AP;Cobertura de Pré-Natal (em %);61.5
+2021;Norte;AP;Cobertura de Pré-Natal (em %);63.0
+2019;Norte;TO;Cobertura de Pré-Natal (em %);78.0
+2020;Norte;TO;Cobertura de Pré-Natal (em %);79.5
+2021;Norte;TO;Cobertura de Pré-Natal (em %);81.0
+2019;Nordeste;MA;Cobertura de Pré-Natal (em %);70.0
+2020;Nordeste;MA;Cobertura de Pré-Natal (em %);71.5
+2021;Nordeste;MA;Cobertura de Pré-Natal (em %);73.0
+2019;Nordeste;PI;Cobertura de Pré-Natal (em %);80.0
+2020;Nordeste;PI;Cobertura de Pré-Natal (em %);81.5
+2021;Nordeste;PI;Cobertura de Pré-Natal (em %);83.0
+2019;Nordeste;CE;Cobertura de Pré-Natal (em %);85.0
+2020;Nordeste;CE;Cobertura de Pré-Natal (em %);86.5
+2021;Nordeste;CE;Cobertura de Pré-Natal (em %);88.0
+2019;Nordeste;RN;Cobertura de Pré-Natal (em %);82.0
+2020;Nordeste;RN;Cobertura de Pré-Natal (em %);83.5
+2021;Nordeste;RN;Cobertura de Pré-Natal (em %);85.0
+2019;Nordeste;PB;Cobertura de Pré-Natal (em %);80.0
+2020;Nordeste;PB;Cobertura de Pré-Natal (em %);81.5
+2021;Nordeste;PB;Cobertura de Pré-Natal (em %);83.0
+2019;Nordeste;PE;Cobertura de Pré-Natal (em %);75.0
+2020;Nordeste;PE;Cobertura de Pré-Natal (em %);76.5
+2021;Nordeste;PE;Cobertura de Pré-Natal (em %);78.0
+2019;Nordeste;AL;Cobertura de Pré-Natal (em %);72.0
+2020;Nordeste;AL;Cobertura de Pré-Natal (em %);73.5
+2021;Nordeste;AL;Cobertura de Pré-Natal (em %);75.0
+2019;Nordeste;SE;Cobertura de Pré-Natal (em %);78.0
+2020;Nordeste;SE;Cobertura de Pré-Natal (em %);79.5
+2021;Nordeste;SE;Cobertura de Pré-Natal (em %);81.0
+2019;Nordeste;BA;Cobertura de Pré-Natal (em %);77.0
+2020;Nordeste;BA;Cobertura de Pré-Natal (em %);78.5
+2021;Nordeste;BA;Cobertura de Pré-Natal (em %);80.0
+2019;Sudeste;MG;Cobertura de Pré-Natal (em %);88.0
+2020;Sudeste;MG;Cobertura de Pré-Natal (em %);89.5
+2021;Sudeste;MG;Cobertura de Pré-Natal (em %);91.0
+2019;Sudeste;ES;Cobertura de Pré-Natal (em %);90.0
+2020;Sudeste;ES;Cobertura de Pré-Natal (em %);91.5
+2021;Sudeste;ES;Cobertura de Pré-Natal (em %);93.0
+2019;Sudeste;RJ;Cobertura de Pré-Natal (em %);85.0
+2020;Sudeste;RJ;Cobertura de Pré-Natal (em %);86.5
+2021;Sudeste;RJ;Cobertura de Pré-Natal (em %);88.0
+2019;Sudeste;SP;Cobertura de Pré-Natal (em %);92.0
+2020;Sudeste;SP;Cobertura de Pré-Natal (em %);93.5
+2021;Sudeste;SP;Cobertura de Pré-Natal (em %);95.0
+2019;Sul;PR;Cobertura de Pré-Natal (em %);95.0
+2020;Sul;PR;Cobertura de Pré-Natal (em %);96.5
+2021;Sul;PR;Cobertura de Pré-Natal (em %);98.0
+2019;Sul;SC;Cobertura de Pré-Natal (em %);94.0
+2020;Sul;SC;Cobertura de Pré-Natal (em %);95.5
+2021;Sul;SC;Cobertura de Pré-Natal (em %);97.0
+2019;Sul;RS;Cobertura de Pré-Natal (em %);93.0
+2020;Sul;RS;Cobertura de Pré-Natal (em %);94.5
+2021;Sul;RS;Cobertura de Pré-Natal (em %);96.0
+2019;Centro-Oeste;MS;Cobertura de Pré-Natal (em %);85.0
+2020;Centro-Oeste;MS;Cobertura de Pré-Natal (em %);86.5
+2021;Centro-Oeste;MS;Cobertura de Pré-Natal (em %);88.0
+2019;Centro-Oeste;MT;Cobertura de Pré-Natal (em %);82.0
+2020;Centro-Oeste;MT;Cobertura de Pré-Natal (em %);83.5
+2021;Centro-Oeste;MT;Cobertura de Pré-Natal (em %);85.0
+2019;Centro-Oeste;GO;Cobertura de Pré-Natal (em %);88.0
+2020;Centro-Oeste;GO;Cobertura de Pré-Natal (em %);89.5
+2021;Centro-Oeste;GO;Cobertura de Pré-Natal (em %);91.0
+2019;Centro-Oeste;DF;Cobertura de Pré-Natal (em %);90.0
+2020;Centro-Oeste;DF;Cobertura de Pré-Natal (em %);91.5
+2021;Centro-Oeste;DF;Cobertura de Pré-Natal (em %);93.0
