@@ -2,6 +2,17 @@
 
 Este dashboard foi integralmente desenvolvido em Python, utilizando o framework **Streamlit** para a interface interativa e a biblioteca **Plotly** para a geração de gráficos dinâmicos e de alta qualidade.
 
+---
+
+### **Desenvolvedor e Fontes**
+
+* **Desenvolvido por:** **Claudiano Pinto de Oliveira Junior**
+* **Instituição:** Estudante de Ciência da Computação do CEUB
+* **Base de Dados:** DATASUS (Departamento de Informática do Sistema Único de Saúde)
+* **Direitos Reservados:** Todos os direitos deste projeto e sua estrutura pertencem a Claudiano Pinto de Oliveira Junior.
+
+---
+
 ### 1. Estrutura e Desempenho
 
 * **Cache de Dados (`@st.cache_data`):** Garante a alta performance e a agilidade do dashboard. O arquivo CSV é lido e processado apenas uma vez, otimizando o desempenho e tornando todas as interações subsequentes (filtros e trocas de aba) instantâneas.
