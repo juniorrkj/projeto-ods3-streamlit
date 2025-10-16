@@ -3,14 +3,12 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-# --- Configurações Iniciais ---
 st.set_page_config(
     page_title="ODS 3 - Saúde e Bem-Estar no Brasil",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# --- Definição dos Indicadores ---
 INDICADORES_PARA_GRAFICO = [
     'Mortalidade Infantil (por 1000 NV)',
     'Incidência de AIDS (por 100 mil hab)',
@@ -25,13 +23,11 @@ INDICADORES_PARA_CORRELACAO = {
     'Cobertura Pré-Natal (7+ consultas)': 'Cobertura Pré-Natal'
 }
 
-# --- Carregamento dos Dados ---
 @st.cache_data
 def load_data():
     try:
         df = pd.read_csv('data/ods_saude_brasil_limpo.csv', sep=';')
         
-        # Conversão de Tipos e Filtro
         df['Ano'] = df['Ano'].astype(int)
         df['Valor'] = df['Valor'].astype(float)
         df = df[df['Ano'] <= 2025].copy() 
@@ -46,7 +42,6 @@ df = load_data()
 if df.empty:
     st.stop()
 
-# --- Sidebar para Filtros ---
 st.sidebar.header("Filtros de Análise")
 
 indicador_selecionado = st.sidebar.selectbox(
@@ -70,11 +65,9 @@ ano_selecionado = st.sidebar.slider(
     step=1
 )
 
-# --- Título Principal ---
 st.title("Dashboard ODS 3: Saúde e Bem-Estar no Brasil 🇧🇷")
 st.markdown(f"Análise dos indicadores de **{INDICADORES_PARA_CORRELACAO.get(indicador_selecionado, indicador_selecionado)}** por Unidade Federativa (2018-{max_year})")
 
-# --- Função de Cálculo e Formatação de Variação ---
 def calcular_e_formatar_variacao(data_serie):
     if len(data_serie) < 2:
         return "N/A", "off" 
@@ -88,7 +81,6 @@ def calcular_e_formatar_variacao(data_serie):
 
     variacao_percentual = ((valor_final - valor_inicial) / valor_inicial) * 100
 
-    # Lógica para definir a cor do delta (inverso para indicadores negativos)
     if 'Mortalidade' in indicador_selecionado or 'Incidência' in indicador_selecionado or 'Suicídio' in indicador_selecionado:
         cor = "inverse" if variacao_percentual > 0 else "normal"
     elif 'Cobertura' in indicador_selecionado:
@@ -98,7 +90,6 @@ def calcular_e_formatar_variacao(data_serie):
 
     return f"{variacao_percentual:.2f} %", cor
 
-# --- Pré-processamento para Métricas e Histórico ---
 if uf_selecionada == "BRASIL (Média Nacional)":
     df_metrica = df[df['Ano'] == max_year].groupby('Indicador')['Valor'].mean().reset_index()
     df_historico_indicador = df.groupby(['Ano', 'Indicador'])['Valor'].mean().reset_index()
@@ -109,7 +100,6 @@ else:
     df_historico_indicador = df[(df['Nome_UF'] == uf_selecionada) & (df['Indicador'] == indicador_selecionado)]
     titulo_metrica = uf_selecionada
 
-# --- LAYOUT PRINCIPAL (Colunas de Métricas) ---
 valor_atual_principal = df_metrica[df_metrica['Indicador'] == indicador_selecionado]['Valor'].iloc[0] if not df_metrica[df_metrica['Indicador'] == indicador_selecionado].empty else 0
 variacao, cor_variacao = calcular_e_formatar_variacao(df_historico_indicador.sort_values(by='Ano')['Valor'])
 df_media_nacional = df[df['Ano'] == max_year].groupby('Indicador')['Valor'].mean()
@@ -152,15 +142,8 @@ for i, ind_ref in enumerate(indicadores_ref):
         )
 
 
-# =========================================================================
-# --- LAYOUT COM ABAS (st.tabs) ---
-# =========================================================================
-
 tab_evolucao, tab_regional, tab_correlacao = st.tabs(["📊 Evolução Histórica", "🗺️ Distribuição Regional", "🔗 Correlação"])
 
-# -----------------------------------------------------------
-# TAB 1: EVOLUÇÃO HISTÓRICA
-# -----------------------------------------------------------
 with tab_evolucao:
     st.subheader(f"Evolução Histórica do Indicador em {titulo_metrica}")
     
@@ -182,9 +165,6 @@ with tab_evolucao:
     st.plotly_chart(fig_evolucao, use_container_width=True)
 
 
-# -----------------------------------------------------------
-# TAB 2: DISTRIBUIÇÃO REGIONAL
-# -----------------------------------------------------------
 with tab_regional:
     st.subheader(f"Distribuição Regional do Indicador (Ano: {ano_selecionado})")
     
@@ -207,9 +187,6 @@ with tab_regional:
     st.plotly_chart(fig_regional, use_container_width=True)
 
 
-# -----------------------------------------------------------
-# TAB 3: CORRELAÇÃO DE INDICADORES
-# -----------------------------------------------------------
 with tab_correlacao:
     st.subheader(f"Análise de Correlação entre Indicadores (Ano: {ano_selecionado})")
     
@@ -259,7 +236,6 @@ with tab_correlacao:
     )
     st.plotly_chart(fig_corr, use_container_width=True)
 
-# --- Rodapé com Expander para Documentação ---
 st.markdown("---")
 
 with st.expander("📚 Documentação dos Indicadores ODS 3 Selecionados"):
