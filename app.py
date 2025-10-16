@@ -1,6 +1,3 @@
-Claro\! Abaixo está o código com os comentários reduzidos ao estritamente necessário para explicar a lógica do Streamlit, o processamento de dados e os gráficos.
-
-```python
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -91,7 +88,7 @@ def calcular_e_formatar_variacao(data_serie):
 
     variacao_percentual = ((valor_final - valor_inicial) / valor_inicial) * 100
 
-    # Lógica de cor: 'inverse' para piora (Mortalidade/AIDS/Suicídio AUMENTANDO, Cobertura DIMINUINDO)
+    # Lógica de cor: 'inverse' para piora
     if 'Mortalidade' in indicador_selecionado or 'Incidência' in indicador_selecionado or 'Suicídio' in indicador_selecionado:
         cor = "inverse" if variacao_percentual > 0 else "normal"
     elif 'Cobertura' in indicador_selecionado:
@@ -268,6 +265,8 @@ with st.expander("📚 Documentação dos Indicadores ODS 3 Selecionados"):
         * **Incidência de AIDS:** Casos novos de AIDS por 100 mil habitantes (Meta 3.3 - Combate a Doenças Transmissíveis).
         * **Taxa de Suicídio:** Óbitos por suicídio por 100 mil habitantes (Meta 3.4 - Saúde Mental e Bem-Estar Psicológico).
         * **Cobertura Pré-Natal:** Percentual de nascidos vivos cujas mães realizaram 7 ou mais consultas de pré-natal (Meta 3.7/3.8 - Acesso a Serviços de Saúde e Promoção da Saúde).
+        """
+    )
         """
     )
 ```
