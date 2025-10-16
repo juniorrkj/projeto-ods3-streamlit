@@ -261,12 +261,9 @@ st.markdown("---")
 with st.expander("📚 Documentação dos Indicadores ODS 3 Selecionados"):
     st.markdown(
         """
-        * **Mortalidade Infantil:** Número de óbitos de menores de 1 ano por 1.000 nascidos vivos (Meta 3.2).
-        * **Incidência de AIDS:** Casos novos de AIDS por 100 mil habitantes (Meta 3.3 - Combate a Doenças Transmissíveis).
-        * **Taxa de Suicídio:** Óbitos por suicídio por 100 mil habitantes (Meta 3.4 - Saúde Mental e Bem-Estar Psicológico).
-        * **Cobertura Pré-Natal:** Percentual de nascidos vivos cujas mães realizaram 7 ou mais consultas de pré-natal (Meta 3.7/3.8 - Acesso a Serviços de Saúde e Promoção da Saúde).
+* **Mortalidade Infantil:** Número de óbitos de menores de 1 ano por 1.000 nascidos vivos (Meta 3.2).
+* **Incidência de AIDS:** Casos novos de AIDS por 100 mil habitantes (Meta 3.3 - Combate a Doenças Transmissíveis).
+* **Taxa de Suicídio:** Óbitos por suicídio por 100 mil habitantes (Meta 3.4 - Saúde Mental e Bem-Estar Psicológico).
+* **Cobertura Pré-Natal:** Percentual de nascidos vivos cujas mães realizaram 7 ou mais consultas de pré-natal (Meta 3.7/3.8 - Acesso a Serviços de Saúde e Promoção da Saúde).
         """
     )
-        """
-    )
-```
