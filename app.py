@@ -1,213 +1,273 @@
-# app.py - CÓDIGO FINAL COM ANÁLISE DE CORRELAÇÃO
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import os
+import plotly.graph_objects as go
 
-# --- 1. CONFIGURAÇÃO DA PÁGINA ---
+# --- Configurações Iniciais ---
 st.set_page_config(
-    page_title="📊 ODS 3: Indicadores de Saúde e Bem-Estar no Brasil",
+    page_title="ODS 3 - Saúde e Bem-Estar no Brasil",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="expanded"
 )
 
-DATA_PATH = os.path.join("data", "ods_saude_brasil_limpo.csv")
+# --- Definição dos Indicadores ---
+INDICADORES_PARA_GRAFICO = [
+    'Mortalidade Infantil (por 1000 NV)',
+    'Incidência de AIDS (por 100 mil hab)',
+    'Taxa de Suicídio (por 100 mil hab)',
+    'Cobertura Pré-Natal (7+ consultas)'
+]
 
+INDICADORES_PARA_CORRELACAO = {
+    'Mortalidade Infantil (por 1000 NV)': 'Mortalidade Infantil',
+    'Incidência de AIDS (por 100 mil hab)': 'Incidência de AIDS',
+    'Taxa de Suicídio (por 100 mil hab)': 'Taxa de Suicídio',
+    'Cobertura Pré-Natal (7+ consultas)': 'Cobertura Pré-Natal'
+}
 
-# --- 2. CARREGAMENTO E CACHE DE DADOS ---
+# --- Carregamento dos Dados ---
 @st.cache_data
 def load_data():
-    """Carrega o DataFrame e garante a tipagem correta."""
     try:
-        df = pd.read_csv(DATA_PATH, sep=';')
+        df = pd.read_csv('data/ods_saude_brasil_limpo.csv', sep=';')
+        
+        # Conversão de Tipos e Filtro
         df['Ano'] = df['Ano'].astype(int)
         df['Valor'] = df['Valor'].astype(float)
+        df = df[df['Ano'] <= 2025].copy() 
+
         return df
-    
-    except Exception as e:
-        st.error(f"Erro de carregamento. Detalhe: {e}")
+    except FileNotFoundError:
+        st.error("Erro: O arquivo de dados 'data/ods_saude_brasil_limpo.csv' não foi encontrado. Verifique o caminho.")
         return pd.DataFrame()
 
-df_full = load_data()
+df = load_data()
 
+if df.empty:
+    st.stop()
 
-# --- 3. DICIONÁRIO PARA AJUDA VISUAL (EMOJIS) ---
-INDICATOR_ICONS = {
-    'Mortalidade Infantil (por 1000 NV)': '👶',
-    'Casos de Tuberculose (por 100 mil hab)': '🦠',
-    'Razão de Mortalidade Materna (por 100 mil NV)': '🤰',
-    'Taxa de Suicídio (por 100 mil hab)': '🧠',
-    'Cobertura de Pré-Natal (em %)': '🏥'
-}
- 
+# --- Sidebar para Filtros ---
+st.sidebar.header("Filtros de Análise")
 
-# --- 4. CONSTRUÇÃO DO DASHBOARD ---
+indicador_selecionado = st.sidebar.selectbox(
+    "Selecione o Indicador Principal:",
+    options=INDICADORES_PARA_GRAFICO
+)
 
-if not df_full.empty:
+list_ufs = sorted(df['Nome_UF'].unique().tolist())
+list_ufs.insert(0, "BRASIL (Média Nacional)")
+uf_selecionada = st.sidebar.selectbox(
+    "Selecione a UF para Análise Histórica:",
+    options=list_ufs
+)
+
+max_year = df['Ano'].max()
+ano_selecionado = st.sidebar.slider(
+    "Ano para Análise Regional/Correlação:",
+    min_value=df['Ano'].min(),
+    max_value=max_year,
+    value=max_year,
+    step=1
+)
+
+# --- Título Principal ---
+st.title("Dashboard ODS 3: Saúde e Bem-Estar no Brasil 🇧🇷")
+st.markdown(f"Análise dos indicadores de **{INDICADORES_PARA_CORRELACAO.get(indicador_selecionado, indicador_selecionado)}** por Unidade Federativa (2018-{max_year})")
+
+# --- Função de Cálculo e Formatação de Variação ---
+def calcular_e_formatar_variacao(data_serie):
+    if len(data_serie) < 2:
+        return "N/A", "off" 
     
-    # 4.1. BARRA LATERAL (FILTROS)
-    st.sidebar.title("🛠️ Configurações de Análise")
+    data_serie = data_serie.sort_values()
+    valor_inicial = data_serie.iloc[0] 
+    valor_final = data_serie.iloc[-1]  
 
-    indicadores_unicos = df_full['Indicador'].unique()
+    if valor_inicial == 0:
+        return "N/A", "off"
 
-    def format_indicador_option(indicador):
-        icon = INDICATOR_ICONS.get(indicador, '📈')
-        return f"{icon} {indicador}"
+    variacao_percentual = ((valor_final - valor_inicial) / valor_inicial) * 100
 
-    # Filtro 1: Indicador Principal
-    indicador_selecionado_formatado = st.sidebar.selectbox(
-        "1. Selecione o Indicador Principal:",
-        options=[format_indicador_option(i) for i in indicadores_unicos]
-    )
-    indicador_principal = indicador_selecionado_formatado.split(' ', 1)[-1]
-    
-    # Filtro 2: Indicador Secundário (PARA CORRELAÇÃO)
-    indicador_secundario_options = [i for i in indicadores_unicos if i != indicador_principal]
-    indicador_secundario_formatado = st.sidebar.selectbox(
-        "2. Selecione o Indicador para Correlação:",
-        options=[format_indicador_option(i) for i in indicador_secundario_options]
-    )
-    indicador_secundario = indicador_secundario_formatado.split(' ', 1)[-1]
-
-    # Filtro 3: Região
-    regioes_unicas = sorted(df_full['Regiao'].unique())
-    regioes_selecionadas = st.sidebar.multiselect(
-        "3. Selecione a(s) Região(ões):",
-        options=regioes_unicas,
-        default=regioes_unicas
-    )
-
-    # Filtro 4: UF
-    ufs_disponiveis = sorted(df_full[df_full['Regiao'].isin(regioes_selecionadas)]['Nome_UF'].unique())
-    ufs_selecionadas = st.sidebar.multiselect(
-        "4. Selecione as Unidades Federativas (UF):",
-        options=ufs_disponiveis,
-        default=ufs_disponiveis
-    )
-
-    # Aplica os filtros para o indicador principal (para os gráficos 1, 2 e KPIs)
-    df_principal_filtrado = df_full[
-        (df_full['Indicador'] == indicador_principal) & 
-        (df_full['Nome_UF'].isin(ufs_selecionadas))
-    ]
-
-    # --- 5. TÍTULO E INTRODUÇÃO ---
-    st.markdown(f"## {INDICATOR_ICONS.get(indicador_principal, '📈')} ODS 3: {indicador_principal}")
-    st.markdown("##### *Objetivo de Desenvolvimento Sustentável 3: Saúde e Bem-Estar*")
-    st.markdown("---")
-
-    # --- 6. VISUALIZAÇÃO DE DADOS ---
-    if not df_principal_filtrado.empty:
-        
-        unidade_principal = indicador_principal.split('(')[-1].replace(')', '').strip() if '(' in indicador_principal else 'Valor'
-        unidade_secundaria = indicador_secundario.split('(')[-1].replace(')', '').strip() if '(' in indicador_secundario else 'Valor'
-
-        # Agrupa os dados para métricas de resumo
-        df_resumo = df_principal_filtrado.groupby('Ano')['Valor'].mean().reset_index()
-        
-        # --- 6.1. CARDS DE MÉTRICAS (KPIs do Indicador Principal) ---
-        st.subheader("Resumo do Indicador Principal")
-        col1, col2, col3 = st.columns(3)
-        
-        ultimo_ano = df_resumo['Ano'].max()
-        primeiro_ano = df_resumo['Ano'].min()
-        
-        media_ultimo_ano = df_resumo[df_resumo['Ano'] == ultimo_ano]['Valor'].iloc[0]
-        media_primeiro_ano = df_resumo[df_resumo['Ano'] == primeiro_ano]['Valor'].iloc[0]
-        
-        variacao = ((media_ultimo_ano - media_primeiro_ano) / media_primeiro_ano) * 100
-        delta_label = f"{variacao:.2f}%"
-        
-        col1.metric(
-            label=f"Média Geral ({ultimo_ano})",
-            value=f"{media_ultimo_ano:.2f} {unidade_principal}"
-        )
-        col2.metric(
-            label=f"Média Geral ({primeiro_ano})",
-            value=f"{media_primeiro_ano:.2f} {unidade_principal}"
-        )
-        col3.metric(
-            label="Variação Total",
-            value=f"{media_ultimo_ano - media_primeiro_ano:.2f} {unidade_principal}",
-            delta=delta_label
-        )
-        
-        st.markdown("---")
-        
-        # --- 6.2. GRÁFICO DE LINHA (SÉRIE HISTÓRICA POR UF) ---
-        st.subheader("Evolução Histórica por Unidade Federativa")
-        
-        fig_uf = px.line(
-            df_principal_filtrado,
-            x='Ano',
-            y='Valor',
-            color='Nome_UF',
-            markers=True,
-            title=f'Série Histórica de {indicador_principal}',
-            labels={
-                "Valor": f"Valor ({unidade_principal})",
-                "Ano": "Ano",
-                "Nome_UF": "UF"
-            },
-            template="plotly_dark"
-        )
-        
-        fig_uf.update_layout(hovermode="x unified")
-        st.plotly_chart(fig_uf, use_container_width=True)
-
-
-        # --- 6.3. ANÁLISE DE CORRELAÇÃO (GRÁFICO NOVO) ---
-        st.markdown("## 🔎 Análise de Correlação entre Indicadores")
-
-        # 1. Pivotar o DataFrame para ter os dois indicadores em colunas
-        df_corr = df_full[
-            df_full['Indicador'].isin([indicador_principal, indicador_secundario]) &
-            df_full['Nome_UF'].isin(ufs_selecionadas)
-        ]
-        
-        # Cria a tabela de comparação (Ano, UF, Valor_Principal, Valor_Secundario)
-        df_pivot = df_corr.pivot_table(
-            index=['Nome_UF', 'Ano', 'Regiao'],
-            columns='Indicador',
-            values='Valor'
-        ).reset_index()
-
-        # 2. Calcular o Coeficiente de Correlação de Pearson (em todos os pontos de dados)
-        correlacao = df_pivot[indicador_principal].corr(df_pivot[indicador_secundario])
-
-        # 3. Exibir o Coeficiente de Correlação
-        st.metric(
-            label=f"Coeficiente de Correlação de Pearson (r) entre {indicador_principal} e {indicador_secundario}",
-            value=f"{correlacao:.3f}",
-            delta=f"Relação {'Positiva Forte' if correlacao > 0.7 else ('Positiva' if correlacao > 0.3 else ('Negativa Forte' if correlacao < -0.7 else ('Negativa' if correlacao < -0.3 else 'Fraca/Nula')))}"
-        )
-        
-        st.caption("Quanto mais próximo de 1, mais forte é a relação positiva (ambos sobem). Quanto mais próximo de -1, mais forte é a relação negativa (um sobe, o outro desce).")
-
-
-        # 4. Gráfico de Dispersão (Scatter Plot)
-        fig_corr = px.scatter(
-            df_pivot,
-            x=indicador_principal,
-            y=indicador_secundario,
-            color='Regiao',
-            hover_data=['Nome_UF', 'Ano'],
-            title=f'Correlação: {indicador_principal} vs. {indicador_secundario}',
-            labels={
-                indicador_principal: f'X: {indicador_principal} ({unidade_principal})',
-                indicador_secundario: f'Y: {indicador_secundario} ({unidade_secundaria})'
-            },
-            template="plotly_dark"
-        )
-        
-        st.plotly_chart(fig_corr, use_container_width=True)
-
-        st.markdown("---")
-
-        # --- 6.4. Tabela de Dados (Expansível) ---
-        with st.expander("Visualizar Tabela de Dados Completos do Indicador Principal"):
-            st.dataframe(df_principal_filtrado, use_container_width=True)
-
+    # Lógica para definir a cor do delta (inverso para indicadores negativos)
+    if 'Mortalidade' in indicador_selecionado or 'Incidência' in indicador_selecionado or 'Suicídio' in indicador_selecionado:
+        cor = "inverse" if variacao_percentual > 0 else "normal"
+    elif 'Cobertura' in indicador_selecionado:
+        cor = "normal" if variacao_percentual > 0 else "inverse"
     else:
-        st.info("Selecione um indicador e pelo menos uma UF para visualizar os dados.")
+        cor = "off"
+
+    return f"{variacao_percentual:.2f} %", cor
+
+# --- Pré-processamento para Métricas e Histórico ---
+if uf_selecionada == "BRASIL (Média Nacional)":
+    df_metrica = df[df['Ano'] == max_year].groupby('Indicador')['Valor'].mean().reset_index()
+    df_historico_indicador = df.groupby(['Ano', 'Indicador'])['Valor'].mean().reset_index()
+    df_historico_indicador = df_historico_indicador[df_historico_indicador['Indicador'] == indicador_selecionado]
+    titulo_metrica = "Média Nacional"
+else:
+    df_metrica = df[(df['Nome_UF'] == uf_selecionada) & (df['Ano'] == max_year)]
+    df_historico_indicador = df[(df['Nome_UF'] == uf_selecionada) & (df['Indicador'] == indicador_selecionado)]
+    titulo_metrica = uf_selecionada
+
+# --- LAYOUT PRINCIPAL (Colunas de Métricas) ---
+valor_atual_principal = df_metrica[df_metrica['Indicador'] == indicador_selecionado]['Valor'].iloc[0] if not df_metrica[df_metrica['Indicador'] == indicador_selecionado].empty else 0
+variacao, cor_variacao = calcular_e_formatar_variacao(df_historico_indicador.sort_values(by='Ano')['Valor'])
+df_media_nacional = df[df['Ano'] == max_year].groupby('Indicador')['Valor'].mean()
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric(
+        label=f"Valor Mais Recente ({max_year}) em {titulo_metrica}",
+        value=f"{valor_atual_principal:.2f}",
+        delta=f"Variação ({df['Ano'].min()}-{max_year}): {variacao}",
+        delta_color=cor_variacao
+    )
+
+indicadores_ref = [ind for ind in INDICADORES_PARA_GRAFICO if ind != indicador_selecionado]
+
+for i, ind_ref in enumerate(indicadores_ref):
+    valor_atual_ref = df_metrica[df_metrica['Indicador'] == ind_ref]['Valor'].iloc[0] if not df_metrica[df_metrica['Indicador'] == ind_ref].empty else 0
+    media_nacional_ref = df_media_nacional.get(ind_ref, 0)
+    
+    if media_nacional_ref != 0:
+        diferenca_percentual = ((valor_atual_ref - media_nacional_ref) / media_nacional_ref) * 100
+        delta_str = f"{diferenca_percentual:.2f} %"
+    else:
+        delta_str = "N/A"
+
+    if 'Mortalidade' in ind_ref or 'Incidência' in ind_ref or 'Suicídio' in ind_ref:
+        cor_ref = "inverse" if valor_atual_ref > media_nacional_ref else "normal"
+    elif 'Cobertura' in ind_ref:
+        cor_ref = "normal" if valor_atual_ref > media_nacional_ref else "inverse"
+    else:
+        cor_ref = "off"
+
+    with [col2, col3, col4][i]:
+        st.metric(
+            label=f"Ref: {INDICADORES_PARA_CORRELACAO[ind_ref]} ({max_year})",
+            value=f"{valor_atual_ref:.2f}",
+            delta=f"Vs. Média Nacional: {delta_str}",
+            delta_color=cor_ref
+        )
+
+
+# =========================================================================
+# --- LAYOUT COM ABAS (st.tabs) ---
+# =========================================================================
+
+tab_evolucao, tab_regional, tab_correlacao = st.tabs(["📊 Evolução Histórica", "🗺️ Distribuição Regional", "🔗 Correlação"])
+
+# -----------------------------------------------------------
+# TAB 1: EVOLUÇÃO HISTÓRICA
+# -----------------------------------------------------------
+with tab_evolucao:
+    st.subheader(f"Evolução Histórica do Indicador em {titulo_metrica}")
+    
+    fig_evolucao = px.line(
+        df_historico_indicador,
+        x='Ano',
+        y='Valor',
+        markers=True,
+        title=f'Série Histórica de {INDICADORES_PARA_CORRELACAO.get(indicador_selecionado, indicador_selecionado)} ({df["Ano"].min()}-{max_year})',
+        template='plotly_dark'
+    )
+    fig_evolucao.update_traces(line=dict(color='yellow', width=3))
+    
+    fig_evolucao.update_xaxes(
+        dtick=1, 
+        tickformat='d', 
+        categoryorder='category ascending' 
+    )
+    st.plotly_chart(fig_evolucao, use_container_width=True)
+
+
+# -----------------------------------------------------------
+# TAB 2: DISTRIBUIÇÃO REGIONAL
+# -----------------------------------------------------------
+with tab_regional:
+    st.subheader(f"Distribuição Regional do Indicador (Ano: {ano_selecionado})")
+    
+    df_filtrado_ano_indicador = df[(df['Ano'] == ano_selecionado) & (df['Indicador'] == indicador_selecionado)]
+    df_regional = df_filtrado_ano_indicador.groupby(['Regiao', 'Nome_UF'])['Valor'].mean().reset_index()
+
+    fig_regional = px.bar(
+        df_regional,
+        x='Valor',
+        y='Nome_UF',
+        color='Regiao',
+        orientation='h',
+        title=f'Distribuição por UF em {ano_selecionado}',
+        template='plotly_dark',
+        height=600,
+        labels={'Valor': indicador_selecionado, 'Nome_UF': 'Unidade Federativa'}
+    )
+    fig_regional.update_layout(yaxis={'categoryorder':'total ascending'})
+    
+    st.plotly_chart(fig_regional, use_container_width=True)
+
+
+# -----------------------------------------------------------
+# TAB 3: CORRELAÇÃO DE INDICADORES
+# -----------------------------------------------------------
+with tab_correlacao:
+    st.subheader(f"Análise de Correlação entre Indicadores (Ano: {ano_selecionado})")
+    
+    col_x, col_y = st.columns(2)
+    
+    with col_x:
+        indicador_corr_x = st.selectbox(
+            "Selecione o Indicador A (Eixo X):",
+            options=INDICADORES_PARA_GRAFICO,
+            index=0 
+        )
+
+    with col_y:
+        opcoes_y = [ind for ind in INDICADORES_PARA_GRAFICO if ind != indicador_corr_x]
+        try:
+            default_index = opcoes_y.index('Cobertura Pré-Natal (7+ consultas)')
+        except ValueError:
+            default_index = 0
+
+        indicador_corr_y = st.selectbox(
+            "Selecione o Indicador B (Eixo Y):",
+            options=opcoes_y,
+            index=default_index
+        )
+        
+    df_corr_base = df[df['Ano'] == ano_selecionado].pivot(
+        index='Nome_UF', 
+        columns='Indicador', 
+        values='Valor'
+    ).reset_index()
+    
+    try:
+        correlacao = df_corr_base[indicador_corr_x].corr(df_corr_base[indicador_corr_y])
+        correlacao_str = f"{correlacao:.2f}"
+    except Exception:
+        correlacao_str = "N/A"
+
+    st.info(f"O Coeficiente de Correlação de Pearson (r) entre **{INDICADORES_PARA_CORRELACAO[indicador_corr_x]}** e **{INDICADORES_PARA_CORRELACAO[indicador_corr_y]}** é: **{correlacao_str}**")
+    
+    fig_corr = px.scatter(
+        df_corr_base,
+        x=indicador_corr_x,
+        y=indicador_corr_y,
+        hover_name='Nome_UF',
+        title=f'Correlação entre {INDICADORES_PARA_CORRELACAO[indicador_corr_x]} e {INDICADORES_PARA_CORRELACAO[indicador_corr_y]}',
+        template='plotly_dark'
+    )
+    st.plotly_chart(fig_corr, use_container_width=True)
+
+# --- Rodapé com Expander para Documentação ---
+st.markdown("---")
+
+with st.expander("📚 Documentação dos Indicadores ODS 3 Selecionados"):
+    st.markdown(
+        """
+        * **Mortalidade Infantil:** Número de óbitos de menores de 1 ano por 1.000 nascidos vivos (Meta 3.2).
+        * **Incidência de AIDS:** Casos novos de AIDS por 100 mil habitantes (Meta 3.3 - Combate a Doenças Transmissíveis).
+        * **Taxa de Suicídio:** Óbitos por suicídio por 100 mil habitantes (Meta 3.4 - Saúde Mental e Bem-Estar Psicológico).
+        * **Cobertura Pré-Natal:** Percentual de nascidos vivos cujas mães realizaram 7 ou mais consultas de pré-natal (Meta 3.7/3.8 - Acesso a Serviços de Saúde e Promoção da Saúde).
+        """
+    )
